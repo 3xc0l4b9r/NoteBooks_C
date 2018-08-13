@@ -1,4 +1,4 @@
-#include "pivotindex.h"
+#include "head.h"
 
 int pivotIndex(int* nums, int numsSize) 
 {
