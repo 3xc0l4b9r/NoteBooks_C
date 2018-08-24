@@ -22,11 +22,11 @@ int* findDiagonalOrder(int** matrix,\
 		returned[k] = matrix[i][j];
 		//右上
 		if (up) {
-			//判断是否在边距内，在则继续往上
+			//判断是否到了上边界，没有则继续往右上
 			if ((i-1) >= 0 && (j+1) < matrixColSize) {
 				//行在减，列在加
 				i--, j++;
-			//转换方向
+			//到了上边界，则转换方向向右边
 			}else if ((j+1) < matrixColSize) {
 				j++;
 				up = false;
