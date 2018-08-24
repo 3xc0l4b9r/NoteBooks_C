@@ -7,5 +7,7 @@
 int pivotIndex(int* nums, int numsSize);
 int dominantIndex(int* nums, int numsSize);
 int* plusOne(int* digits, int digitsSize, int* returnSize);
-
+int* findDiagonalOrder(int** matrix,\
+		int matrixRowSize, int matrixColSize,\
+		int* returnSize);
 #endif
