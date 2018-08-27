@@ -22,29 +22,54 @@ int* findDiagonalOrder(int** matrix,\
 		returned[k] = matrix[i][j];
 		//右上
 		if (up) {
-			//判断是否到了上边界，没有则继续往右上
+
+			//初始对角线方向为右上方
 			if ((i-1) >= 0 && (j+1) < matrixColSize) {
-				//行在减，列在加
+
+				//(偏移量:行-1,列+1)
 				i--, j++;
-			//到了上边界，则转换方向向右边
+
+				/*向右上方移动时遇到上边界时,
+				 * 若未达到右边界,则向右移动*/
 			}else if ((j+1) < matrixColSize) {
+
+				//(偏移量：行+0,列+1)
 				j++;
 				up = false;
-			//判断是否到了最右下角的元素，到了则全部退出
+
+				//否则,向下移动
 			}else if ((i+1) < matrixRowSize) {
+
+				//(偏移量:行+1,列+0)
 				i++;
 				up = false;
+
 			}else break;
-		//左下
+
+			//左下
 		}else {
+
+			//遇到边界时转向左下方
 			if ((j-1) >= 0 && (i+1) < matrixRowSize) {
+
+				//(偏移量:行+1,列-1)
 				i++, j--;
+
+				/* 向左下方移动时遇到左边界时,
+				 * 若未达到下边界,则向下移动*/
 			}else if ((i+1) < matrixRowSize) {
+
+				//(偏移量：行+1,列+0)
 				i++;
 				up = true;
+
+				//否则,向右移动
 			}else if ((j+1) < matrixColSize) {
+
+				//(偏移量：行+0,列+1)
 				j++;
 				up = true;
+
 			}else break;
 		}
 
