@@ -13,6 +13,7 @@ int* findDiagonalOrder(int** matrix,\
 
 	int k;
 	bool up = true;
+	//i和j必须和matixRowSize,matrixColSize相对应，否则会出错
 	int i = 0, j = 0;
 	*returnSize = matrixRowSize*matrixColSize;
 	int* returned = (int* )calloc(1, sizeof(int)*matrixRowSize*matrixColSize);
